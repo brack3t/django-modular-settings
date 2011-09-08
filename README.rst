@@ -47,3 +47,8 @@ After downloading the file, from your project directory, run the script. ::
   python modular_settings.py
 
 Assuming everything goes as planned, you should see a message saying your settings are now a little more awesome.
+
+Finally
+=======
+
+Delete the modular_settings.py file.
