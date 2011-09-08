@@ -1,4 +1,5 @@
 import os
+import sys
 
 init_content = """from .base import *
 
@@ -12,7 +13,15 @@ def get_project_dir():
     dir_list = os.path.abspath(__file__).split('/')[:-1]
     return '/'.join(dir_list)
 
-def awesomeness():
+def make_it_so():
+    """
+    Read the current default settings.py into memory.
+    Create the settings directory.
+    Create the basic __init__.py file which imports base.py and looks
+    for local.py.
+    Write settings to base.py.
+    Clean up and dump the old settings.py and the pyc file if it exists.
+    """
     PROJECT_PATH = get_project_dir()
 
     if os.path.exists(PROJECT_PATH + '/settings'):
@@ -49,14 +58,19 @@ def awesomeness():
         raise OSError("Cannot delete the default settings file.")
 
     try:
+        os.remove(PROJECT_PATH + '/settings.pyc')
+    except OSError:
+        pass
+
+    try:
         local = open(PROJECT_PATH + '/settings/local.py', 'wb')
         local.write('# your local dev settings go here.')
         local.close()
     except IOError:
         raise IOError("Cannot write local.py file.")
 
-    print("Done")
+    sys.stdout.write("Your settings are now a little more awesome.\n")
 
 
 if __name__ == '__main__':
-    awesomeness()
+    make_it_so()
