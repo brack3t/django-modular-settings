@@ -28,7 +28,7 @@ What this script does:
 What You Get
 ============
 
-Now you can edit ``local.py`` for you dev environment and extend things like ``INSTALLED_APPS`` but just for you. ::
+Now you can edit ``local.py`` for your dev environment and extend things like ``INSTALLED_APPS`` but just for you. ::
 
   INSTALLED_APPS += (
     'debug_toolbar',
@@ -44,7 +44,7 @@ Now you can edit ``local.py`` for you dev environment and extend things like ``I
 Installation
 ============
 
-This is a simple script that does not need to be installed or compiled. It's a run once and discard project. You will want to ``curl`` or ``wget`` the ``modular_settings.py`` file to your project directory. Specifically to the directory where the default Django ``settings.py`` file resides. ::
+This is a simple script that does not need to be installed or compiled. It's a run-once-and-discard project. You will want to ``curl`` or ``wget`` the ``modular_settings.py`` file to your project directory. Specifically to the directory where the default Django ``settings.py`` file resides. ::
 
   curl -O https://raw.github.com/chrisjones-brack3t/django-modular-settings/master/modular_settings.py
 
@@ -55,7 +55,7 @@ Or, if you prefer wget::
 Usage
 =====
 
-After downloading the file, from your project directory, run the script. ::
+After downloading the file, run the script from your project directory. ::
 
   python modular_settings.py
 
