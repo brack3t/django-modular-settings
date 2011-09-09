@@ -31,8 +31,14 @@ What You Get
 Now you can edit ``local.py`` for you dev environment and extend things like ``INSTALLED_APPS`` but just for you. ::
 
   INSTALLED_APPS += (
-    'debug-toolbar',
+    'debug_toolbar',
   )
+
+  MIDDLEWARE_CLASSES += (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+  )
+
+  INTERNAL_IPS = ('127.0.0.1',)
 
 
 Installation
